@@ -80,3 +80,87 @@ def requests_mock(request):
 
     with rm_module.Mocker(**kw) as m:
         yield m
+
+@_fixture_type(scope='function')  # executed on every test
+def requests_mock_function_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
+
+@_fixture_type(scope='module')
+def requests_mock_module_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
+
+@_fixture_type(scope='module')
+def requests_mock_module_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
+
+@_fixture_type(scope='class')
+def requests_mock_class_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
+
+@_fixture_type(scope='package')
+def requests_mock_package_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
+
+@_fixture_type(scope='session')
+def requests_mock_session_scope(request):
+    """Mock out the requests component of your code with defined responses.
+
+    Mocks out any requests made through the python requests library with useful
+    responses for unit testing. See:
+    https://requests-mock.readthedocs.io/en/latest/
+    """
+    case_sensitive = request.config.getini('requests_mock_case_sensitive')
+    kw = {'case_sensitive': _bool_value(case_sensitive)}
+
+    with rm_module.Mocker(**kw) as m:
+        yield m
